@@ -4,4 +4,4 @@ class Guest {
     this.name = guest.name;
   }
 }
-export default ;
+export default Guest;
