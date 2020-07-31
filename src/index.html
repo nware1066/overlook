@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>OverLook</title>
+    <title>OverLook Hotel</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>Overlook</h1>
-
+    <main>
     <img src="./images/turing-logo.png" alt="turing logo" height="100px" width="100px">
-
+    <h1>Welcome to the Overlook Hotel</h1>
+    <h2>User Login</h2>
+      <div class="log-in">
+        <form>
+          <label for="username">Username</label>
+          <input id="username" type="text" placeholder="Username" required />
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="Password" required />
+          <button class="login-submit-button">Submit</button>
+        </form>
+      </div>
+    </main>
     <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
   </body>
 </html>
