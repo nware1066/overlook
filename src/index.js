@@ -1,26 +1,26 @@
 
-// This is the JavaScript entry file - your code begins here
-// Do not delete or rename this file ********
-
-// An example of how you tell webpack to use a CSS (SCSS) file
 import getAllFetchedData from './api';
 import './css/base.scss';
 import Guest from './Guest';
 import Manager from './Manager';
+import './images/turing-logo.png'
 
-logInSubmitButton.addEventListener('click', loginUser);
+console.log(getAllFetchedData)
 
-function loginUser() {
-  const logInSubmitButton = document.querySelector(.log-in-submit-button);
-  if (userName === manager) {
-    displayManagerDashboard();
-  } else {
-    // find user by id,
-    displayGuestDashboard();
-  }
-}
+window.onload(getAllFetchedData());
+//
+// logInSubmitButton.addEventListener('click', loginUser);
+//
+// function loginUser() {
+//   const logInSubmitButton = document.querySelector(.log-in-submit-button);
+//   if (userName === manager) {
+//     displayManagerDashboard();
+//   } else {
+//     // find user by id,
+//     displayGuestDashboard();
+//   }
+// }
 
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
-import './images/turing-logo.png'
 
 console.log('This is the JavaScript entry file - your code begins here.');
