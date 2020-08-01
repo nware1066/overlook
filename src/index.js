@@ -3,11 +3,12 @@ import getAllFetchedData from './API';
 import './css/base.scss';
 import Guest from './Guest';
 import Manager from './Manager';
+// An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import './images/turing-logo.png'
 
-console.log(getAllFetchedData)
 
-window.onload(getAllFetchedData());
+
+// window.onload(getAllFetchedData());
 //
 // logInSubmitButton.addEventListener('click', loginUser);
 //
@@ -21,6 +22,5 @@ window.onload(getAllFetchedData());
 //   }
 // }
 
-// An example of how you tell webpack to use an image (also need to link to it in the index.html)
 
 console.log('This is the JavaScript entry file - your code begins here.');
