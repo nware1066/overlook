@@ -6,6 +6,14 @@ import Manager from './Manager';
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import './images/turing-logo.png'
 
+let overlookData;
+
+getAllFetchedData().then(allData => {
+  overlookData = allData;
+  console.log('overlookData', allData)
+  return allData;
+})
+
 
 
 // window.onload(getAllFetchedData());

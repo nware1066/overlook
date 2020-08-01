@@ -23,7 +23,7 @@ function fetchUsers() {
   }
 
    function getAllFetchedData() {
-    let resolvedData = Promise.all([fetchUsers(), fetchRooms(), fetchBookings()])
+    return Promise.all([fetchUsers(), fetchRooms(), fetchBookings()])
     .then(response => {
       let allData = {};
       allData.users = response[0];
@@ -35,6 +35,4 @@ function fetchUsers() {
     .catch(error => console.log("allData error"))
   }
 
-  getAllFetchedData();
-
-export default API;
+export default getAllFetchedData;
