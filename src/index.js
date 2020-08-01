@@ -10,25 +10,24 @@ let overlookData;
 
 getAllFetchedData().then(allData => {
   overlookData = allData;
-  console.log('overlookData', allData)
   return allData;
 })
 
 
 
 // window.onload(getAllFetchedData());
-//
-// logInSubmitButton.addEventListener('click', loginUser);
-//
-// function loginUser() {
-//   const logInSubmitButton = document.querySelector(.log-in-submit-button);
-//   if (userName === manager) {
-//     displayManagerDashboard();
-//   } else {
-//     // find user by id,
-//     displayGuestDashboard();
-//   }
-// }
+let logInSubmitButton = document.querySelector(".login-submit-button");
+
+logInSubmitButton.addEventListener('click', loginUser);
+
+function loginUser() {
+  if (userName === 'manager') {
+    updataDom.displayManagerDashboard();
+  // } else {
+  //   // find user by id,
+  //   displayGuestDashboard();
+  }
+}
 
 
 console.log('This is the JavaScript entry file - your code begins here.');
