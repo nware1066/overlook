@@ -35,6 +35,6 @@ function fetchUsers() {
     .catch(error => console.log("allData error"))
   }
 
-  // getAllFetchedData();
-// }
-// export default getAllFetchedData;
+  getAllFetchedData();
+
+export default API;
