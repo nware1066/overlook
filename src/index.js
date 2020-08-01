@@ -1,5 +1,5 @@
 
-import getAllFetchedData from './api';
+import getAllFetchedData from './API';
 import './css/base.scss';
 import Guest from './Guest';
 import Manager from './Manager';
