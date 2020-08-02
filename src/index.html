@@ -9,29 +9,28 @@
     <section class="login-page">
     <h1>Welcome to the Overlook Hotel</h1>
     <h2>User Login</h2>
-  </section class="log-in">
+      <section class="log-in">
         <form class="login-form">
           <label for="userName">Username</label>
-          <input id="userName" aria-label="username input" type="text" placeholder="User name" required />
+          <input class="user-name" aria-label="username input" type="text" placeholder="User name" value="manager" required />
           <label for="password">Password</label>
-          <input id="password" aria-label="password input" type="password" placeholder="Password" required />
+          <input class="password" aria-label="password input" type="password" placeholder="Password" value="overlook2020" required />
           <button class="login-submit-button" aria-label="login submit button">Submit</button>
         </form>
       </section>
-      <section class="manager-dashboard hidden">
-        <p class="available-rooms">There are currently ## available rooms<p>
-        <p class="daily-revenue">The revenue for today is ##</p>
-        <p class="occupancy-percentage">## percent of total rooms are currently occupied</p>
-      </section>
+    </section>
+    <section class="manager-dashboard hidden">
+      <p class="available-rooms">There are currently ## available rooms<p>
+      <p class="daily-revenue">The revenue for today is ##</p>
+      <p class="occupancy-percentage">## percent of total rooms are currently occupied</p>
       <section class="manager-search-section">
         <label for="client-search">Search</label>
         <input id="client-search" type="text" placeholder="Client Name" required /></section>
-      <section class="guest-dashboard hidden">
-        <section class="customer-dashboard">
-          <p class="client-booking-info">Your bookings with the OverLook Hotel</p>
-          <p class="client-spending-info">Your total expenses for your visits with us</p>
-        </section>
-      </section>
+    </section>
+    <section class="guest-dashboard hidden">
+        <p class="client-booking-info">Your bookings with the OverLook Hotel</p>
+        <p class="client-spending-info">Your total expenses for your visits with us</p>
+    </section>
     <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
   </body>
 </html>

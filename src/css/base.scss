@@ -5,3 +5,8 @@ $primary-background: linear-gradient(to right, rgba(210,255,82,1) 0%, rgba(95,22
 body {
   background: $primary-background;
 }
+
+
+.hidden {
+  display: none;
+}
