@@ -5,4 +5,5 @@ class Booking {
     this.roomNumber = hotelData.bookings.roomNumber;
   }
 }
+
 export default Booking;

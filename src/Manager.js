@@ -7,10 +7,11 @@ import Room from './Room';
 class Manager {
   constructor(hotelData) {
     this.name = 'manager';
-    // this.users = hotelData.users;
-    // this.bookings = hotelData.bookings;
-    // this.rooms = hotelData.rooms;
+    this.users = hotelData.users;
+    this.bookings = hotelData.bookings;
+    this.rooms = hotelData.rooms;
   }
+  
 }
 
 

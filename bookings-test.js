@@ -1,21 +1,18 @@
-import chai from 'chai';
+mport chai from 'chai';
 const expect = chai.expect;
-import Manager from '../src/Manager';
+import Booking from '../src/Booking';
 import Guest from '../src/Guest';
 import mockGuests from './testData/mockGuests'
 import mockRooms from './testData/mockRooms'
 import mockBookings from './testData/mockBookings'
 
-describe('Guest', function() {
-  let guest;
+describe('Booking', function() {
+  let booking;
 
   beforeEach(function() {
-    guest = new Guest()
+    booking = new Booking()
   });
 
   it('should be a function', function() {
-    expect(Guest).to.be.a('function');
+    expect(Booking).to.be.a('function');
   });
-
-  it('should have an id')
-});

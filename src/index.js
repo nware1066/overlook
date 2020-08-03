@@ -3,18 +3,21 @@ import getAllFetchedData from './API';
 import './css/base.scss';
 import Guest from './Guest';
 import Manager from './Manager';
-import domUpdates from './updateDom'
+import Room from './Room';
+import Booking from './Booking';
+import domUpdates from './updateDom';
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
-import './images/turing-logo.png'
+import './images/turing-logo.png';
 
-let hotelData;
+// let hotelData;
 
 getAllFetchedData()
-  .then(allData => {
-    hotelData = allData;
-  });
+  .then(hotelData => {
+    return new Manager(hotelData);
+  })
+  .then(manager => console.log(manager) )
 
-console.log("index", hotelData)
+
 
 let loginSubmitButton = document.querySelector(".login-submit-button");
 let login = document.querySelector(".login-page");
