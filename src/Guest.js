@@ -7,6 +7,10 @@ class Guest {
     this.bookings = [];
     this.totalSpent = 0;
   }
+
+  addBooking(booking) {
+    this.bookings.push(booking)
+  }
 }
 export default Guest;
 
