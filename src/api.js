@@ -26,7 +26,8 @@ function fetchUsers() {
     return Promise.all([fetchUsers(), fetchRooms(), fetchBookings()])
     .then(response => {
       let allData = {};
-      allData.users = response[0];
+      allData.users = response[0]
+      // .map((userData) => new Guest(userData));
       allData.rooms = response[1];
       allData.bookings = response[2];
       console.log(allData)
