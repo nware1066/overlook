@@ -14,6 +14,8 @@ getAllFetchedData()
     hotelData = allData;
   });
 
+console.log("index", hotelData)
+
 let loginSubmitButton = document.querySelector(".login-submit-button");
 let login = document.querySelector(".login-page");
 let guestDashboard = document.querySelector(".guest-dashboard");
@@ -28,7 +30,6 @@ function loginUser(e) {
     domUpdates.displayManagerDashboard(login, managerDashboard);
   } else {
     let user = hotelData.users.find(user => `customer${user.id}` === userName.value)
-    console.log(user);
     if (user) {
       domUpdates.displayGuestDashboard(login, guestDashboard);
     }

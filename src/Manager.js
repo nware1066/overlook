@@ -1,23 +1,26 @@
-import Guest from './Guest'
+import Guest from './Guest';
+import Booking from './Booking';
+import Room from './Room';
+
 // manipulate Data model and send to index
 
 class Manager {
   constructor(hotelData) {
     this.name = 'manager';
-    this.users = hotelData.users;
-    this.bookings = hotelData.bookings;
-    this.rooms = hotelData.rooms;
+    // this.users = hotelData.users;
+    // this.bookings = hotelData.bookings;
+    // this.rooms = hotelData.rooms;
   }
 }
 
 
-findBookingsByDate() {
-
-}
+// findBookingsByDate() {
+//
+// }
 // method to takd in date and find all booked rooms for that domUpdates
 // return the info in an array
 
-console.log('manager',hotelData.)
+// console.log('manager', this.users[1])
 
 export default Manager;
 
