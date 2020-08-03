@@ -33,8 +33,11 @@ function loginUser(e) {
   if (userName.value === 'manager') {
     console.log('a', userName.value)
     displayManagerDashboard();
-  // } else {
-  //   // find user by id,
+  } else {
+    let currentGuest = new Guest(guestData)
+    if (userName.value === currentGuest.name) {
+      displayGuestDashboard();
+    }
   //   displayGuestDashboard();
   // }
   }
