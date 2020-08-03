@@ -1,10 +1,10 @@
 
-// const allFetchedData = {
+import Guest from './Guest';
 
 function fetchUsers() {
     return fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/users/users')
       .then(response => response.json())
-      .then(data => data.users)
+      .then(data => data.users.map(user => new Guest(user)))
       .catch(error => console.log("fetch user error"));
   }
 
@@ -27,7 +27,6 @@ function fetchUsers() {
     .then(response => {
       let allData = {};
       allData.users = response[0]
-      // .map((userData) => new Guest(userData));
       allData.rooms = response[1];
       allData.bookings = response[2];
       console.log(allData)
