@@ -11,14 +11,14 @@ function fetchUsers() {
   function fetchRooms() {
     return fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/rooms/rooms')
       .then(response => response.json())
-      .then(data => data.rooms)
+      .then(data => data.rooms).map(room => new Room(room))
       .catch(error => console.log("fetch rooms error"))
   }
 
    function fetchBookings() {
     return fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/bookings/bookings')
     .then(response => response.json())
-    .then(data => data.bookings)
+    .then(data => data.bookings).map(booking => new Booking(booking))
     .catch(error => console.log("fetch bookings error"))
   }
 
