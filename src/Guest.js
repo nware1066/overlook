@@ -2,11 +2,12 @@ class Guest {
   constructor(guestData) {
     this.id = guestData.id;
     this.name = guestData.name;
-    this.username = guestData.userName;
+    // this.username = guestData.userName;
     this.password = 'overlook2020'
     this.bookings = [];
     this.totalSpent = 0;
   }
+
 
   addBooking(booking) {
     this.bookings.push(booking)
