@@ -23,10 +23,11 @@ getAllFetchedData().then(fetchedData => {
     console.log('hotel', hotel)
   })
 
-let dateToday = moment().format('YYY/MM/DD');
+let dateToday = moment().format('YYYY/MM/DD');
 let loginSubmitButton = document.querySelector(".login-submit-button");
 let login = document.querySelector(".login-page");
 let guestDashboard = document.querySelector(".guest-dashboard");
+let availableRooms = document.querySelector(".available-rooms");
 let managerDashboard = document.querySelector(".manager-dashboard");
 let userName = document.querySelector(".user-name")
 
@@ -47,6 +48,10 @@ function loginUser(e) {
       currentGuest.bookings = hotel.bookings.filter(booking => currentGuest.id === booking.userID)
       domUpdates.displayGuestDashboard(login, guestDashboard);
     }
+  }
+
+  function updateManagerDashboard() {
+
   }
   // invoke methods from classes and index in the correct order and at the correct time
 }
