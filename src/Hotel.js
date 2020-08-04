@@ -18,7 +18,6 @@ class Hotel {
 
   findAvailableRooms(date) {
     return this.rooms.filter(room => {
-      console.log(room)
       return !this.findTodaysBookings(date).find(booking => {
         return booking.roomNumber === room.number;
       });
