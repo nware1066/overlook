@@ -38,4 +38,8 @@ describe('Hotel', function() {
     it('should be able to find available rooms', function() {
       expect(hotel.findAvailableRooms(today).length).to.equal(3);
     })
+
+    it ('should be able to find the percentage of occupied rooms', function() {
+      expect(hotel.findOccupancyByPercent(today)).to.equal(25);
+    })
   })
