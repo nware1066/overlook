@@ -9,12 +9,12 @@ import domUpdates from './updateDom';
 // An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import './images/turing-logo.png';
 
-// let hotelData;
+let hotel;
 const moment = require('moment');
 
-getAllFetchedData()
-  .then(hotelData => {
-    return new Manager(hotelData);
+getAllFetchedData().then(allData => {
+    hotel = new Hotel(allData.users, allData.rooms, addData.bookings);
+    console.log('api', allData)
   })
   .then(manager => console.log(manager) )
 
@@ -33,7 +33,7 @@ function loginUser(e) {
   if (userName.value === 'manager') {
     domUpdates.displayManagerDashboard(login, managerDashboard);
   } else {
-    let user = hotelData.users.find(user => `customer${user.id}` === userName.value)
+    let user = allData.users.find(user => `customer${user.id}` === userName.value)
     if (user) {
       domUpdates.displayGuestDashboard(login, guestDashboard);
     }
