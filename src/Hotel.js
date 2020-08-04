@@ -3,7 +3,7 @@
 class Hotel {
   constructor(guests, rooms, bookings) {
     this.guests = guests;
-    this.rooms = rooms.rooms;
+    this.rooms = rooms;
     this.bookings = bookings;
     this.availableRooms = [];
     this.bookedRooms = [];
@@ -29,9 +29,9 @@ class Hotel {
   }
 
   findOccupancyByPercent(date) {
-    const numOccupiedRooms = this.rooms.length - this.findAvailableRooms(date).length;
-    let percentAvailable = (numOccupiedRooms / this.rooms.length) * 100;
-    return percentAvailable;
+    const numOccupiedRooms = this.rooms.length - this.totalAvailableRooms(date);
+    let percentOccupied = (numOccupiedRooms / this.rooms.length) * 100;
+    return percentOccupied;
   }
 
   findDailyRevenue(date) {
@@ -41,7 +41,7 @@ class Hotel {
       }
       return dailyRevenue;
     }, 0);
-    return dailyRevenue;
+    return Math.round(dailyRevenue);
   }
 
   isRoomBooked(roomNumber, date) {

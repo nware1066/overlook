@@ -18,10 +18,9 @@ let currentGuest;
 const moment = require('moment');
 
 getAllFetchedData().then(fetchedData => {
-    hotel = new Hotel(fetchedData.users, fetchedData.rooms, fetchedData.bookings);
-    allData = fetchedData;
-    console.log('hotel', hotel)
-  })
+  hotel = new Hotel(fetchedData.users, fetchedData.rooms.rooms, fetchedData.bookings);
+  allData = fetchedData;
+})
 
 let dateToday = moment().format('YYYY/MM/DD');
 let loginSubmitButton = document.querySelector(".login-submit-button");
@@ -33,25 +32,23 @@ let userName = document.querySelector(".user-name")
 
 loginSubmitButton.addEventListener('click', loginUser);
 
-
+// create loginHander onclick if manager, displaymanagerDashboard, displayAvailableRooms, displayT
 
 function loginUser(e) {
   e.preventDefault()
   if (userName.value === 'manager') {
     manager = new Manager();
-    domUpdates.displayManagerDashboard(login, managerDashboard);
+    domUpdates.managerDashboardHandler(hotel, dateToday)
   } else {
     let user = allData.users.find(user => `customer${user.id}` === userName.value)
     console.log(user)
     if (user) {
       currentGuest = new Guest(user);
+      // domupdates.guestDashboardHandler
+      console.log(hotel.bookings)
       currentGuest.bookings = hotel.bookings.filter(booking => currentGuest.id === booking.userID)
       domUpdates.displayGuestDashboard(login, guestDashboard);
     }
-  }
-
-  function updateManagerDashboard() {
-
   }
   // invoke methods from classes and index in the correct order and at the correct time
 }

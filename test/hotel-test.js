@@ -31,15 +31,15 @@ describe('Hotel', function() {
     });
 
     it('should be able to find available rooms', function() {
-      const availableRooms = hotel.findAvailableRooms(today);
+      const availableRooms = hotel.findAvailableRooms(today)
       expect(availableRooms.length).to.equal(3);
     })
 
-    it ('should be able to find the percentage of occupied rooms', function() {
+    it('should be able to find the percentage of occupied rooms', function() {
       expect(hotel.findOccupancyByPercent(today)).to.equal(25);
     })
 
     it('should be able to calculate the total revenue for a given date', function() {
-      expect(hotel.findDailyRevenue(today)).to.equal(289.32)
+      expect(hotel.findDailyRevenue(today)).to.equal(289)
     })
   })
