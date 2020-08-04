@@ -5,11 +5,11 @@ import Room from './Room';
 // manipulate Data model and send to index
 
 class Manager {
-  constructor(managerData) {
-    this.id = managerData.id
-    this.name = 'Manager';
+  constructor() {
+    this.name = 'manager';
   }
 
+  
 
 
 }
