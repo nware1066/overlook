@@ -18,18 +18,29 @@ const domUpdates = {
     guestDashboard.classList.remove('hidden');
   },
 
-  displayAllAvailableRooms: function(total) {
-    let availableRooms = document.querySelector(".available-rooms");
-    availableRooms.innerHTML = `Total available rooms: ${total}`;
+  updateTotalAvailableRooms: function(hotel, date) {
+    const availableRoomsHTML = document.querySelector(".available-rooms");
+    const total = hotel.totalAvailableRooms(date);
+    availableRoomsHTML.innerHTML = `Total available rooms: ${total}`;
   },
 
-  updateTotalAvailableRooms: function(hotel, date) {
-      const total = hotel.totalAvailableRooms(date);
-      domUpdates.displayAllAvailableRooms(total);
+  updateDailyRevenue: function(hotel, date) {
+    let dailyRevenueHTML = document.querySelector(".daily-revenue");
+    let dailyRevenue = hotel.findDailyRevenue(date);
+    dailyRevenueHTML.innerHTML = `The revenue for today is ${dailyRevenue}`
   },
+
+  updatePercentageTotalRooms: function(hotel, date) {
+    let occupancyPercentageHTML = document.querySelector(".occupancy-percentage");
+    let occupancyPercentage = hotel.findOccupancyByPercent(date);
+    occupancyPercentageHTML.innerHTML = `${occupancyPercentage} percent of total rooms are currently occupied`
+  },
+
   managerDashboardHandler: function(hotel, date) {
     this.displayManagerDashboard(login, managerDashboard);
     this.updateTotalAvailableRooms(hotel, date);
+    this.updateDailyRevenue(hotel, date);
+    this.updatePercentageTotalRooms(hotel, date);
   }
   // method to display rooms booked for the date from function on Manager.js (don't forget arguments and querySelectors)
 }
