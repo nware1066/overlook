@@ -18,7 +18,7 @@ let currentGuest;
 const moment = require('moment');
 
 getAllFetchedData().then(fetchedData => {
-  hotel = new Hotel(fetchedData.users, fetchedData.rooms, fetchedData.bookings);
+  hotel = new Hotel(fetchedData.users, fetchedData.rooms.rooms, fetchedData.bookings);
   allData = fetchedData;
 })
 
