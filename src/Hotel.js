@@ -5,7 +5,7 @@ class Hotel {
     this.guests = guests;
     this.rooms = rooms.rooms;
     this.bookings = bookings;
-    // this.todaysBookings = [];
+    this.availableRooms = [];
     this.bookedRooms = [];
   }
 
@@ -22,6 +22,10 @@ class Hotel {
         return booking.roomNumber === room.number;
       });
     });
+  }
+
+  totalAvailableRooms(date) {
+    return this.findAvailableRooms(date).length;
   }
 
   findOccupancyByPercent(date) {
