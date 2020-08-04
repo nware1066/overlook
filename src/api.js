@@ -32,7 +32,7 @@ function fetchUsers() {
       allData.users = response[0]
       allData.rooms = response[1];
       allData.bookings = response[2];
-      console.log(allData)
+      // console.log(allData)
       return allData;
     })
     .catch(error => console.log("allData error"))

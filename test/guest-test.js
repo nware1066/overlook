@@ -30,10 +30,10 @@ describe('Guest', function() {
     expect(guest2.name).to.be.equal("Zoe Washburn");
   });
 
-  it('should have username', function() {
-    expect(guest1.username).to.be.equal("Big Dog");
-    expect(guest2.username).to.be.equal("Ghost Rider");
-  });
+  // it('should have username', function() {
+  //   expect(guest1.username).to.be.equal("Big Dog");
+  //   expect(guest2.username).to.be.equal("Ghost Rider");
+  // });
 
   it('should have password', function() {
     expect(guest1.password).to.be.equal("overlook2020");

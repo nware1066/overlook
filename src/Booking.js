@@ -1,8 +1,10 @@
 class Booking {
-  constructor(hotelData) {
-    this.userID = hotelData.bookings.userID;
-    this.date = hotelData.bookings.date;
-    this.roomNumber = hotelData.bookings.roomNumber;
+  constructor(bookingData) {
+    this.id = bookingData.id;
+    this.userID = bookingData.userID;
+    this.date = bookingData.date;
+    this.roomNumber = bookingData.roomNumber;
+    this.roomServiceCharges = [];
   }
 }
 
