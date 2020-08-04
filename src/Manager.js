@@ -5,13 +5,10 @@ import Room from './Room';
 // manipulate Data model and send to index
 
 class Manager {
-  constructor(hotelData) {
-    this.name = 'manager';
-    this.users = hotelData.users;
-    this.bookings = hotelData.bookings;
-    this.rooms = hotelData.rooms;
+  constructor(managerData) {
+    this.id = managerData.id
+    this.name = 'Manager';
   }
-  
 }
 
 

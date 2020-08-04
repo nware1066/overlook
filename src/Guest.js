@@ -1,8 +1,8 @@
 class Guest {
-  constructor(guestData) {
-    this.id = hotelData.users.id;
-    this.name = hotelData.users.name;
-    this.username = hotelData.users.userName;
+  constructor(guessData) {
+    this.id = guessData.id;
+    this.name = guessData.name;
+    this.username = guessData.userName;
     this.password = 'overlook2020'
     this.bookings = [];
     this.totalSpent = 0;
