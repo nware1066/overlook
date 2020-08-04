@@ -21,6 +21,11 @@ const domUpdates = {
   displayAllAvailableRooms: function(total) {
     let availableRooms = document.querySelector(".available-rooms");
     availableRooms.innerHTML = `Total available rooms: ${total}`;
+  },
+
+  updateManagerDashboard: function(hotel, date) {
+      const total = hotel.totalAvailableRooms(date)
+      domUpdates.displayAllAvailableRooms(total);
   }
   // method to display rooms booked for the date from function on Manager.js (don't forget arguments and querySelectors)
 }
