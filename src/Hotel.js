@@ -5,8 +5,8 @@ class Hotel {
     this.guests = guests;
     this.rooms = rooms.rooms;
     this.bookings = bookings;
+    this.todaysBookings = [];
     this.bookedRooms = [];
-    this.availableRooms = [];
   }
 
   findTodaysBookings(date) {
@@ -17,18 +17,17 @@ class Hotel {
   }
 
   findAvailableRooms(date) {
-    let bookedRooms = this.findTodaysBookings(date).map(booking => {
-      return booking.roomNumber
+    return this.rooms.filter(room => {
+      return !this.findTodaysBookings(date).find(booking => {
+        return booking.roomNumber === room.number;
+      });
     });
-
-    let availableRooms =  this.rooms.filter(room => {
-      return !bookedRooms.includes(room.number);
-    })
-    return availableRooms;
   }
 
   findOccupancyByPercent(date) {
-
+    const numOccupiedRooms = this.rooms.length - this.findAvailableRooms(date).length;
+    let percentAvailable = (numOccupiedRooms / this.rooms.length) * 100;
+    return percentAvailable;
   }
 
 }
