@@ -11,6 +11,7 @@ describe('Manager', function() {
 
   beforeEach(function() {
     manager = new Manager({
+      name:"Manager",
       id: 1
     })
   });

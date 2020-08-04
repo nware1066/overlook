@@ -10,6 +10,7 @@ import domUpdates from './updateDom';
 import './images/turing-logo.png';
 
 // let hotelData;
+const moment = require('moment');
 
 getAllFetchedData()
   .then(hotelData => {
@@ -18,7 +19,7 @@ getAllFetchedData()
   .then(manager => console.log(manager) )
 
 
-
+let dateToday = moment().format('YYY/MM/DD');
 let loginSubmitButton = document.querySelector(".login-submit-button");
 let login = document.querySelector(".login-page");
 let guestDashboard = document.querySelector(".guest-dashboard");
