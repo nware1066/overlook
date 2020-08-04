@@ -3,7 +3,7 @@
 class Hotel {
   constructor(guests, rooms, bookings) {
     this.guests = guests;
-    this.rooms = rooms.rooms;
+    this.rooms = rooms;
     this.bookings = bookings;
     this.availableRooms = [];
     this.bookedRooms = [];
@@ -18,6 +18,7 @@ class Hotel {
 
   findAvailableRooms(date) {
     return this.rooms.filter(room => {
+      console.log(room)
       return !this.findTodaysBookings(date).find(booking => {
         return booking.roomNumber === room.number;
       });
