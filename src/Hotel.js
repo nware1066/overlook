@@ -7,11 +7,24 @@ class Hotel {
     this.bookings = bookings;
   }
 
-  findTodaysBookings() {
+  findTodaysBookings(date) {
     let todaysBookings = this.bookings.filter(booking => {
-      return booking.date === moment.format('YYY/MM/DD');
+      return booking.date === date;
     })
      return todaysBookings
+  }
+
+  findAvailableRooms(date) {
+    let bookedRooms = this.FindTodaysBookings(date).map(booking => {
+      return booking.roomNumber
+    });
+    return this.rooms.filter(room => {
+      return !bookedRooms.includes(room.number);
+    })
+  }
+
+  findCostOfBookings() {
+
   }
 }
 export default Hotel;
