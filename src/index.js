@@ -42,7 +42,7 @@ function loginUser(e) {
     // domupdates.managerDashboardHandler
     domUpdates.displayManagerDashboard(login, managerDashboard);
     console.log(hotel)
-    updateManagerDashboard(hotel)
+    domUpdates.updateManagerDashboard(hotel, dateToday)
   } else {
     let user = allData.users.find(user => `customer${user.id}` === userName.value)
     console.log(user)
@@ -55,9 +55,4 @@ function loginUser(e) {
     }
   }
   // invoke methods from classes and index in the correct order and at the correct time
-}
-
-function updateManagerDashboard(hotel) {
-  const total = hotel.totalAvailableRooms(dateToday)
-  domUpdates.displayAllAvailableRooms(total);
 }
