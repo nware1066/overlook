@@ -11,8 +11,7 @@ describe('Manager', function() {
 
   beforeEach(function() {
     manager = new Manager({
-      name:"Manager",
-      id: 1
+      name:"manager",
     })
   });
 
@@ -20,11 +19,7 @@ describe('Manager', function() {
     expect(Manager).to.be.a('function');
   });
 
-  it('should have an id', function() {
-    expect(manager.id).to.be.equal(1);
-  });
-
-  it('should have name of Manager', function() {
-    expect(manager.name).to.be.equal('Manager');
+  it('should have name of manager', function() {
+    expect(manager.name).to.be.equal('manager');
   });
 });
