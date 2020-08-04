@@ -14,6 +14,7 @@ let allData;
 let hotel;
 let manager;
 let currentGuest;
+
 const moment = require('moment');
 
 getAllFetchedData().then(fetchedData => {
@@ -47,6 +48,5 @@ function loginUser(e) {
       domUpdates.displayGuestDashboard(login, guestDashboard);
     }
   }
-
   // invoke methods from classes and index in the correct order and at the correct time
 }

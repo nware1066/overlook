@@ -9,6 +9,9 @@ class Manager {
     this.id = managerData.id
     this.name = 'Manager';
   }
+
+
+
 }
 
 

@@ -1,8 +1,12 @@
-const mockBookings = {
-  bookings: [
+
+const moment = require('moment');
+let today = moment().format('YYY/MM/DD');
+console.log('today', today);
+
+const mockBookings = [
     {
      userID: 1,
-     date: "22/02/2020",
+     date: today,
      roomNumber: 73
    },
    {
@@ -39,7 +43,7 @@ const mockBookings = {
      userID: 67,
      date: "03/10/2019",
      roomNumber: 3
-   },
-  ]
-}
+   }
+ ];
+
 export default mockBookings;
