@@ -1,6 +1,6 @@
 
 const moment = require('moment');
-let today = moment().format('YYY/MM/DD');
+let today = moment().format('YYYY/MM/DD');
 console.log('today', today);
 
 const mockBookings = [

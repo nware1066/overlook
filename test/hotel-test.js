@@ -9,18 +9,13 @@ import mockRooms from './testData/mockRooms';
 import mockBookings from './testData/mockBookings';
 
 const moment = require('moment');
-let today = moment().format('YYY/MM/DD');
+
 describe('Hotel', function() {
-  let hotel, guest1, guest2, guest3, booking1, booking2, booking3, date;
+  const today = moment().format('YYYY/MM/DD');
+  let hotel;
 
     beforeEach(function() {
       hotel = new Hotel(mockGuests, mockRooms, mockBookings);
-      guest1 = new Guest(mockGuests[0])
-      guest2 = new Guest(mockGuests[1])
-      guest3 = new Guest(mockGuests[2])
-      booking1 = new Booking(mockBookings[0])
-      booking2 = new Booking(mockBookings[1])
-      booking3 = new Booking(mockBookings[2])
     });
 
     it('should be a function', function() {
@@ -42,5 +37,9 @@ describe('Hotel', function() {
 
     it ('should be able to find the percentage of occupied rooms', function() {
       expect(hotel.findOccupancyByPercent(today)).to.equal(25);
+    })
+
+    it('should be able to calculate the total revenue for a given date', function() {
+      expect(hotel.findDailyRevenue(today)).to.equal(289.32)
     })
   })

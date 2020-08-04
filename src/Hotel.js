@@ -5,15 +5,15 @@ class Hotel {
     this.guests = guests;
     this.rooms = rooms.rooms;
     this.bookings = bookings;
-    this.todaysBookings = [];
+    // this.todaysBookings = [];
     this.bookedRooms = [];
   }
 
   findTodaysBookings(date) {
     let todaysBookings = this.bookings.filter(booking => {
       return booking.date === date;
-    })
-     return todaysBookings
+    });
+    return todaysBookings;
   }
 
   findAvailableRooms(date) {
@@ -30,5 +30,18 @@ class Hotel {
     return percentAvailable;
   }
 
+  findDailyRevenue(date) {
+    let dailyRevenue = this.rooms.reduce((dailyRevenue, room) => {
+      if (this.isRoomBooked(room.number, date)) {
+        dailyRevenue += room.costPerNight;
+      }
+      return dailyRevenue;
+    }, 0);
+    return dailyRevenue;
+  }
+
+  isRoomBooked(roomNumber, date) {
+    return Boolean(this.findTodaysBookings(date).find(booking => booking.roomNumber === roomNumber));
+  }
 }
 export default Hotel;
