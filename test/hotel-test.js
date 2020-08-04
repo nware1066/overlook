@@ -28,11 +28,14 @@ describe('Hotel', function() {
     });
 
     it('should be able to find bookings for today', function() {
-
       expect(hotel.findTodaysBookings(today)).to.deep.equal([{
          userID: 1,
          date: today,
          roomNumber: 73
        }],)
     });
+
+    it('should be able to find available rooms', function() {
+      expect(hotel.findAvailableRooms(today).length).to.equal(3);
+    })
   })
