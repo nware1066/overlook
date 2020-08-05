@@ -31,19 +31,14 @@ describe('Guest', function() {
     expect(guest2.name).to.be.equal("Zoe Washburn");
   });
 
-  // it('should have username', function() {
-  //   expect(guest1.username).to.be.equal("Big Dog");
-  //   expect(guest2.username).to.be.equal("Ghost Rider");
-  // });
-
   it('should have password', function() {
     expect(guest1.password).to.be.equal("overlook2020");
     expect(guest2.password).to.be.equal("overlook2020");
   });
 
   it('should have bookings', function() {
-    expect(guest1.bookings).to.be.deep.equal([2]);
-    expect(guest2.bookings).to.be.deep.equal([1]);
+    expect(guest1.bookings.length).to.equal(mockBookings.length);
+    expect(guest2.bookings.length).to.equal(mockBookings.length);
   });
 
   it('should have totalSpent of 0 by default', function() {
