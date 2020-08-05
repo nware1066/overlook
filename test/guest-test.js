@@ -10,9 +10,10 @@ describe('Guest', function() {
   let guest1, guest2, guest3;
 
   beforeEach(function() {
-    guest1 = new Guest(mockGuests[0])
-    guest2 = new Guest(mockGuests[1])
-    guest3 = new Guest(mockGuests[2])
+    let mockAllData = {bookings: mockBookings, rooms: mockRooms}
+    guest1 = new Guest(mockGuests[0], mockAllData)
+    guest2 = new Guest(mockGuests[1], mockAllData)
+    guest3 = new Guest(mockGuests[2], mockAllData)
   });
 
   it('should be a function', function() {
@@ -40,9 +41,9 @@ describe('Guest', function() {
     expect(guest2.password).to.be.equal("overlook2020");
   });
 
-  it('should have no bookings by default', function() {
-    expect(guest1.bookings).to.be.deep.equal([]);
-    expect(guest2.bookings).to.be.deep.equal([]);
+  it('should have bookings', function() {
+    expect(guest1.bookings).to.be.deep.equal([2]);
+    expect(guest2.bookings).to.be.deep.equal([1]);
   });
 
   it('should have totalSpent of 0 by default', function() {

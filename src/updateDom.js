@@ -1,7 +1,4 @@
-// import getAllFetchedData from './API';
-// import './css/base.scss';
-// import Guest from './Guest';
-// import Manager from './Manager';
+
 let login = document.querySelector(".login-page");
 let managerDashboard = document.querySelector(".manager-dashboard");
 let guestDashboard = document.querySelector(".guest-dashboard");
@@ -45,7 +42,7 @@ const domUpdates = {
   },
 
   displayGuestBookings: function(hotel, date, currentUser) {
-  let guestBookingHTML = document.querySelector('.guest-booking-info');
+    let guestBookingHTML = document.querySelector('.guest-booking-info');
     let bookingList = currentUser.getAllBookings()
     guestBookingHTML.innerHTML = `Your bookings with Overlook Hotel: ${this.renderBookingDates(bookingList)}`;
   },
@@ -62,7 +59,7 @@ const domUpdates = {
   displayAllSpending: function (currentUser) {
     let guestSpendingInfoHTML = document.querySelector('.guest-spending-info');
     let totalSpending = currentUser.getAllSpending()
-    guestSpendingInfoHTML.innerHTML = `Your time with us has only cost you: ${totalSpending}`;
+    guestSpendingInfoHTML.innerHTML = `All the lovely time with us has only cost you: $${Math.round(totalSpending)}`;
   },
 
    guestDashboardHandler: function(hotel, date, currentUser) {
