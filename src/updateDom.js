@@ -20,7 +20,7 @@ const domUpdates = {
   updateDailyRevenue: function(hotel, date) {
     let dailyRevenueHTML = document.querySelector(".daily-revenue");
     let dailyRevenue = hotel.findDailyRevenue(date);
-    dailyRevenueHTML.innerHTML = `The revenue for today is ${dailyRevenue}`
+    dailyRevenueHTML.innerHTML = `The revenue for today is $${dailyRevenue}`
   },
 
   updatePercentageTotalRooms: function(hotel, date) {
@@ -46,9 +46,6 @@ const domUpdates = {
     let bookingList = currentUser.getAllBookings()
     guestBookingHTML.innerHTML = `Your bookings with Overlook Hotel: ${this.renderBookingDates(bookingList)}`;
   },
-
-  // when I have time, I will break getting the bookingList out into a
-  // helper function (probably in the Guest class) which will make it testable
 
   renderBookingDates: function (bookingList) {
     return bookingList.map(booking => {
