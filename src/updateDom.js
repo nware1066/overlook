@@ -44,17 +44,28 @@ const domUpdates = {
   },
 
   displayGuestBookings: function(hotel, date, currentUser) {
-    let guestBookingHTML = document.querySelector('.guest-booking-info');
-    let bookingList = currentUser.getAllBookings()
-    guestBookingHTML.innerHTML = `Your bookings with Overlook Hotel: ${this.renderBookingDates(bookingList)}`;
-  },
-
-  renderBookingDates: function(bookingList) {
-    return bookingList.map(booking => {
-      return `<p>${booking.date}</p>`
+    let guestBookingHTML = document.querySelector('.guest-current-booking-info');
+    let bookingList = currentUser.getAllBookings();
+    bookingList.map(booking => {
+      guestBookingHTML.innerHTML += `${booking.date}`;
     })
   },
 
+  // renderBookingDates: function(bookingList) {
+  //   let guestCurrentBookingInfo = document.querySelector('.guest-current-booking-info')
+  //   return bookingList.map(booking => {
+  //     return `<p>${booking.date}</p>`
+  //   })
+  // },
+  //
+  //
+  // function displayCustomerBookings() {
+  //   let pastReservations = document.querySelector('.past-reservations-container');
+  //   pastReservations.innerHTML = '';
+  //   return currentCustomer.bookings.map(booking => {
+  //     pastReservations.innerHTML += `<section><p>Booking Date:${booking.date}</p>`
+  //   })
+  // }
   // findGuestBooking: function() {
   //   let guestDateInput = document.querySelector('#guest-date-input').value;
   //   console.log(guestDateInput);

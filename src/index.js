@@ -43,7 +43,6 @@ function loginUser(e) {
     let user = allData.users.find(user => `customer${user.id}` === userName.value)
     if (user) {
       currentGuest = new Guest(user, allData);
-      console.log(currentGuest)
       domUpdates.guestDashboardHandler(hotel, dateToday, currentGuest);
       // currentGuest.bookings = hotel.bookings.filter(booking => currentGuest.id === booking.userID)
     }
