@@ -50,9 +50,10 @@ describe('Guest', function() {
     expect(guest2.totalSpent).to.be.equal(0);
   });
 
-  it('should be able to add a booking', function() {
-    guest1.addBooking
-    expect(guest1.totalSpent).to.be.equal(0);
-    expect(guest2.totalSpent).to.be.equal(0);
-  });
+  //
+  // it('should be able to add a booking', function() {
+  //   expect(guest1.booking).to.be.deep.equal([0]);
+  //   guest1.addBooking()
+  //   expect(guest1.totalSpent).to.be.deep.equal([1]);
+  // });
 });

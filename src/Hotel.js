@@ -31,7 +31,7 @@ class Hotel {
   findOccupancyByPercent(date) {
     const numOccupiedRooms = this.rooms.length - this.totalAvailableRooms(date);
     let percentOccupied = (numOccupiedRooms / this.rooms.length) * 100;
-    return percentOccupied;
+    return Math.round(percentOccupied);
   }
 
   findDailyRevenue(date) {
