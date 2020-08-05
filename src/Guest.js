@@ -8,11 +8,11 @@ class Guest {
     this.totalSpent = 0;
   }
 
+    addBooking(booking) {
+      this.bookings.push(booking)
+    }
 
-  addBooking(booking) {
-    this.bookings.push(booking)
   }
-}
 export default Guest;
 
 

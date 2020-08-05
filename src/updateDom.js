@@ -13,10 +13,6 @@ const domUpdates = {
     managerDashboard.classList.remove('hidden');
   },
 
-   displayGuestDashboard: function() {
-    login.classList.add('hidden');
-    guestDashboard.classList.remove('hidden');
-  },
 
   updateTotalAvailableRooms: function(hotel, date) {
     const availableRoomsHTML = document.querySelector(".available-rooms");
@@ -41,6 +37,31 @@ const domUpdates = {
     this.updateTotalAvailableRooms(hotel, date);
     this.updateDailyRevenue(hotel, date);
     this.updatePercentageTotalRooms(hotel, date);
+  },
+
+  displayGuestDashboard: function() {
+    login.classList.add('hidden');
+    guestDashboard.classList.remove('hidden');
+  },
+
+  displayGuestBookings: function(hotel, date, currentUser) {
+  let guestBookingInfo = document.querySelector('.guest-booking-info');
+    let bookingList = hotel.bookings.filter(booking => currentUser.id === booking.userID);
+    guestBookingInfo.innerHTML = `Your bookings with Overlook Hotel: ${this.renderBookingDates(bookingList)}`;
+  },
+
+  // when I have time, I will break getting the bookingList out into a
+  // helper function (probably in the Guest class) which will make it testable
+
+  renderBookingDates: function (bookingList) {
+    return bookingList.map(booking => {
+      return `<p>${booking.date}</p>`
+    })
+  },
+
+   guestDashboardHandler: function(hotel, date, currentUser) {
+    this.displayGuestDashboard(login, guestDashboard);
+    this.displayGuestBookings(hotel, date, currentUser);
   }
   // method to display rooms booked for the date from function on Manager.js (don't forget arguments and querySelectors)
 }

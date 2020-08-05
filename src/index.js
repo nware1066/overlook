@@ -44,10 +44,8 @@ function loginUser(e) {
     console.log(user)
     if (user) {
       currentGuest = new Guest(user);
-      // domupdates.guestDashboardHandler
-      console.log(hotel.bookings)
-      currentGuest.bookings = hotel.bookings.filter(booking => currentGuest.id === booking.userID)
-      domUpdates.displayGuestDashboard(login, guestDashboard);
+      domUpdates.guestDashboardHandler(hotel, dateToday, currentGuest);
+      // currentGuest.bookings = hotel.bookings.filter(booking => currentGuest.id === booking.userID)
     }
   }
   // invoke methods from classes and index in the correct order and at the correct time
