@@ -1,16 +1,16 @@
 .guest-dashboard {
   display: flex;
-  justify-content: space-around;
+  justify-content: $default-justification;
 }
 
 .guest-dates-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: $default-justification;
 }
 
 .guest-basic-info {
   display: flex;
-  justify-content: space-around;
+  justify-content: $default-justification;
 }
 
 .guest-current-booking-info {

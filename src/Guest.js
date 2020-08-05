@@ -22,14 +22,5 @@ class Guest {
       return total;
     }, 0);
   }
-
-
-
-  // addBooking(booking) {
-  //   this.bookings.push(booking)
-  // }
 }
 export default Guest;
-
-
-// should be able to log in and see dashboard

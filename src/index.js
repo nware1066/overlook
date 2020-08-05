@@ -33,11 +33,7 @@ let guestDateInput = document.querySelector('#guest-date-input');
 let guestDatesButton = document.querySelector(".guest-dates-button");
 
 loginSubmitButton.addEventListener('click', loginUser);
-
-
 guestDatesButton.addEventListener('click', findGuestBooking);
-
-// create loginHander onclick if manager, displaymanagerDashboard, displayAvailableRooms, displayT
 
 function loginUser(e) {
   e.preventDefault()
@@ -51,7 +47,6 @@ function loginUser(e) {
       domUpdates.guestDashboardHandler(hotel, dateToday, currentGuest);
     }
   }
-  // invoke methods from classes and index in the correct order and at the correct time
 }
 
 function findGuestBooking() {
@@ -59,18 +54,51 @@ function findGuestBooking() {
   let date = dateInput.split('-').join('/');
   let availableRooms = hotel.findAvailableRooms(date);
   renderCustomerAvailableDate(availableRooms)
-
 }
+
 function renderCustomerAvailableDate(availableRooms) {
   let guestAvailableRooms = document.querySelector('.guest-available-rooms');
   guestAvailableRooms.innerHTML = '';
   availableRooms.map(room => {
     guestAvailableRooms.innerHTML += `<section>
-    <p>${room.roomType}</p>
-    <p>${room.bedSize}</p>
-    <p>${room.numBeds}</p>
-    <p>${room.number}</p>
+    <p>Room:${room.roomType}</p>
+    <p>BedSize:${room.bedSize}</p>
+    <p>Number of Beds${room.numBeds}</p>
+    <p>Room Number${room.number}</p>
     <button class="guest-booking-button" value=${room.number} type=button>Book room</button>
     </section>`
   })
+  let guestBookingButtons = document.querySelectorAll('.guest-booking-button');
+  guestBookingButtons.forEach(button => {
+    button.addEventListener('click', bookRoom);
+  })
 }
+
+
+function bookRoom(event) {
+  event.preventDefault();
+  if (event.target.classList.contains('guest-booking-button')) {
+    let date = guestDateInput.value;
+    let postDate = date.split('-').join('/');
+    let selectedRoomNumber = event.target.value;
+    let currentGuestID = currentGuest.id;
+    postGuestBooking(postDate, selectedRoomNumber, currentGuestID);
+  }
+}
+
+  function postGuestBooking(postDate, selectedRoomNumber, currentGuestID) {
+    fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/bookings/bookings', {
+     method: 'POST',
+     headers: {
+       'Content-Type': 'application/json'
+     },
+     body: JSON.stringify({
+       userID: Number(currentGuestID),
+       date: postDate,
+       roomNumber: Number(selectedRoomNumber)
+     })
+   })
+   .then(response => response.json())
+   .then(data => console.log('guestpost data', data))
+   .catch(error => console.error('guestPost error', error))
+  }

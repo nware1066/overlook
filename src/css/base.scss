@@ -1,4 +1,5 @@
-/* This is an example of using Sass, otherwise plain CSS works too*/
+
+@import "variables";
 @import "guest-dashboard";
 
 $primary-background: linear-gradient(to right, rgba(210,255,82,1) 0%, rgba(95,220,76,1) 39%, rgba(143,232,66,1) 98%, rgba(145,232,66,1) 100%);
