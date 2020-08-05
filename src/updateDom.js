@@ -47,29 +47,12 @@ const domUpdates = {
     let guestBookingHTML = document.querySelector('.guest-current-booking-info');
     let bookingList = currentUser.getAllBookings();
     bookingList.map(booking => {
-      guestBookingHTML.innerHTML += `${booking.date}`;
+      guestBookingHTML.innerHTML += `<section>${booking.date}</section>`;
     })
   },
 
-  // renderBookingDates: function(bookingList) {
-  //   let guestCurrentBookingInfo = document.querySelector('.guest-current-booking-info')
-  //   return bookingList.map(booking => {
-  //     return `<p>${booking.date}</p>`
-  //   })
-  // },
-  //
-  //
-  // function displayCustomerBookings() {
-  //   let pastReservations = document.querySelector('.past-reservations-container');
-  //   pastReservations.innerHTML = '';
-  //   return currentCustomer.bookings.map(booking => {
-  //     pastReservations.innerHTML += `<section><p>Booking Date:${booking.date}</p>`
-  //   })
-  // }
-  // findGuestBooking: function() {
-  //   let guestDateInput = document.querySelector('#guest-date-input').value;
-  //   console.log(guestDateInput);
-  // },
+
+  
 
   displayAllSpending: function(currentUser) {
     let guestSpendingInfoHTML = document.querySelector('.guest-spending-info');

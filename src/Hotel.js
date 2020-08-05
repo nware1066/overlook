@@ -15,7 +15,7 @@ class Hotel {
     });
     return todaysBookings;
   }
-  
+
   isRoomBooked(roomNumber, date) {
     return Boolean(this.findTodaysBookings(date).find(booking => booking.roomNumber === roomNumber));
   }

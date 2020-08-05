@@ -1,0 +1,30 @@
+.guest-dashboard {
+  display: flex;
+  justify-content: space-around;
+}
+
+.guest-dates-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.guest-basic-info {
+  display: flex;
+  justify-content: space-around;
+}
+
+.guest-current-booking-info {
+  display: grid;
+    margin-top: 12px;
+    grid-gap: 35px;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.guest-available-rooms {
+
+}
+
+.guest-spending-info {
+
+}
