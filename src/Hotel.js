@@ -15,6 +15,10 @@ class Hotel {
     });
     return todaysBookings;
   }
+  
+  isRoomBooked(roomNumber, date) {
+    return Boolean(this.findTodaysBookings(date).find(booking => booking.roomNumber === roomNumber));
+  }
 
   findAvailableRooms(date) {
     return this.rooms.filter(room => {
@@ -27,6 +31,7 @@ class Hotel {
   totalAvailableRooms(date) {
     return this.findAvailableRooms(date).length;
   }
+
 
   findOccupancyByPercent(date) {
     const numOccupiedRooms = this.rooms.length - this.totalAvailableRooms(date);
@@ -42,10 +47,6 @@ class Hotel {
       return dailyRevenue;
     }, 0);
     return Math.round(dailyRevenue);
-  }
-
-  isRoomBooked(roomNumber, date) {
-    return Boolean(this.findTodaysBookings(date).find(booking => booking.roomNumber === roomNumber));
   }
 }
 export default Hotel;

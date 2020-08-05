@@ -23,6 +23,8 @@ class Guest {
     }, 0);
   }
 
+  
+
   addBooking(booking) {
     this.bookings.push(booking)
   }

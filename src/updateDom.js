@@ -2,6 +2,9 @@
 let login = document.querySelector(".login-page");
 let managerDashboard = document.querySelector(".manager-dashboard");
 let guestDashboard = document.querySelector(".guest-dashboard");
+let guestDatesButton = document.querySelector(".guest-dates-button");
+
+// guestDatesButton.addEventListener('click', findGuestBooking);
 
 const domUpdates = {
 
@@ -9,7 +12,6 @@ const domUpdates = {
     login.classList.add('hidden');
     managerDashboard.classList.remove('hidden');
   },
-
 
   updateTotalAvailableRooms: function(hotel, date) {
     const availableRoomsHTML = document.querySelector(".available-rooms");
@@ -47,13 +49,18 @@ const domUpdates = {
     guestBookingHTML.innerHTML = `Your bookings with Overlook Hotel: ${this.renderBookingDates(bookingList)}`;
   },
 
-  renderBookingDates: function (bookingList) {
+  renderBookingDates: function(bookingList) {
     return bookingList.map(booking => {
       return `<p>${booking.date}</p>`
     })
   },
 
-  displayAllSpending: function (currentUser) {
+  // findGuestBooking: function() {
+  //   let guestDateInput = document.querySelector('#guest-date-input').value;
+  //   console.log(guestDateInput);
+  // },
+
+  displayAllSpending: function(currentUser) {
     let guestSpendingInfoHTML = document.querySelector('.guest-spending-info');
     let totalSpending = currentUser.getAllSpending()
     guestSpendingInfoHTML.innerHTML = `All the lovely time with us has only cost you: $${Math.round(totalSpending)}`;
