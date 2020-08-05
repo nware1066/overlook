@@ -18,7 +18,7 @@ let currentGuest;
 const moment = require('moment');
 
 getAllFetchedData().then(fetchedData => {
-  hotel = new Hotel(fetchedData.users, fetchedData.rooms.rooms, fetchedData.bookings);
+  hotel = new Hotel(fetchedData.users, fetchedData.rooms, fetchedData.bookings);
   allData = fetchedData;
 })
 
@@ -41,9 +41,9 @@ function loginUser(e) {
     domUpdates.managerDashboardHandler(hotel, dateToday)
   } else {
     let user = allData.users.find(user => `customer${user.id}` === userName.value)
-    console.log(user)
     if (user) {
-      currentGuest = new Guest(user);
+      currentGuest = new Guest(user, allData);
+      console.log(currentGuest)
       domUpdates.guestDashboardHandler(hotel, dateToday, currentGuest);
       // currentGuest.bookings = hotel.bookings.filter(booking => currentGuest.id === booking.userID)
     }

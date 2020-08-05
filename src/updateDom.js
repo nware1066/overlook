@@ -45,9 +45,9 @@ const domUpdates = {
   },
 
   displayGuestBookings: function(hotel, date, currentUser) {
-  let guestBookingInfo = document.querySelector('.guest-booking-info');
-    let bookingList = hotel.bookings.filter(booking => currentUser.id === booking.userID);
-    guestBookingInfo.innerHTML = `Your bookings with Overlook Hotel: ${this.renderBookingDates(bookingList)}`;
+  let guestBookingHTML = document.querySelector('.guest-booking-info');
+    let bookingList = currentUser.getAllBookings()
+    guestBookingHTML.innerHTML = `Your bookings with Overlook Hotel: ${this.renderBookingDates(bookingList)}`;
   },
 
   // when I have time, I will break getting the bookingList out into a
@@ -59,9 +59,17 @@ const domUpdates = {
     })
   },
 
+  displayAllSpending: function (currentUser) {
+    let guestSpendingInfoHTML = document.querySelector('.guest-spending-info');
+    let totalSpending = currentUser.getAllSpending()
+    guestSpendingInfoHTML.innerHTML = `Your time with us has only cost you: ${totalSpending}`;
+  },
+
    guestDashboardHandler: function(hotel, date, currentUser) {
-    this.displayGuestDashboard(login, guestDashboard);
+     console.log(currentUser)
+    this.displayGuestDashboard(login, guestDashboard, currentUser);
     this.displayGuestBookings(hotel, date, currentUser);
+    this.displayAllSpending(currentUser);
   }
   // method to display rooms booked for the date from function on Manager.js (don't forget arguments and querySelectors)
 }
