@@ -10,9 +10,7 @@ class Room {
     this.bedSize = hotelData.rooms.bedSize;
     this.numBeds = hotelData.rooms.numBeds;
     this.costPerNight = hotelData.rooms.costPerNight;
-    console.log('room', hotelData.rooms.number);
   }
-
 }
 
 export default Room;
