@@ -34,10 +34,10 @@ describe('Room', function() {
     expect(room.roomType).to.equal("junior suite");
   });
 
-  // it('should have a date', function() {
-  //   expect(booking.date).to.equal("31/08/2019");
-  // });
-  //
+  it('should have a bidet', function() {
+    expect(room.bidet).to.equal(true);
+  });
+
   // it('should have a room number', function() {
   //   expect(booking.roomNumber).to.equal(8);
   // });
