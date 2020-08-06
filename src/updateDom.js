@@ -78,15 +78,12 @@ const domUpdates = {
   },
 
    guestDashboardHandler: function(hotel, date, currentUser) {
-     console.log(currentUser)
     this.displayGuestDashboard(login, guestDashboard, currentUser);
     this.displayGuestBookings(hotel, date, currentUser);
     this.displayAllSpending(currentUser);
   }
-  // method to display rooms booked for the date from function on Manager.js (don't forget arguments and querySelectors)
 }
 
-// update DoM using data collected/manipulated in Classes
 
 
 export default domUpdates;
