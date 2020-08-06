@@ -40,7 +40,7 @@ describe('Booking', function() {
     expect(booking.roomNumber).to.equal(8);
   });
 
-  it('should no room service charges by default', function() {
+  it('should have no room service charges by default', function() {
     expect(booking.roomServiceCharges).to.deep.equal([]);
   });
 

@@ -42,8 +42,12 @@ describe('Room', function() {
     expect(room.bedSize).to.equal("king");
   });
 
-  // it('should no room service charges by default', function() {
-  //   expect(booking.roomServiceCharges).to.deep.equal([]);
-  // });
+  it('should have a number of beds per room', function() {
+    expect(room.numBeds).to.equal(1);
+  });
+
+  it('should have a cost per night', function() {
+    expect(room.costPerNight).to.equal(398.47);
+  });
 
 });
