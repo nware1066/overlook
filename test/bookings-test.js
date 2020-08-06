@@ -35,4 +35,13 @@ describe('Booking', function() {
   it('should have a date', function() {
     expect(booking.date).to.equal("31/08/2019");
   });
+
+  it('should have a room number', function() {
+    expect(booking.roomNumber).to.equal(8);
+  });
+
+  it('should no room service charges by default', function() {
+    expect(booking.roomServiceCharges).to.deep.equal([]);
+  });
+
 });
