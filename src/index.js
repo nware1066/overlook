@@ -7,7 +7,6 @@ import Manager from './Manager';
 import Room from './Room';
 import Booking from './Booking';
 import domUpdates from './updateDom';
-// An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import './images/turing-logo.png';
 
 let allData;
@@ -22,20 +21,16 @@ getAllFetchedData().then(fetchedData => {
   allData = fetchedData;
 })
 
-let dateToday = moment().format('YYYY/MM/DD');
-let loginSubmitButton = document.querySelector(".login-submit-button");
-let login = document.querySelector(".login-page");
-let guestDashboard = document.querySelector(".guest-dashboard");
-let availableRooms = document.querySelector(".available-rooms");
-let managerDashboard = document.querySelector(".manager-dashboard");
-let userName = document.querySelector(".user-name")
-let guestDateInput = document.querySelector('#guest-date-input');
-let guestDatesButton = document.querySelector(".guest-dates-button");
+const dateToday = moment().format('YYYY/MM/DD');
+const loginSubmitButton = document.querySelector(".login-submit-button");
+const guestDateInput = document.querySelector('#guest-date-input');
+const guestDatesButton = document.querySelector(".guest-dates-button");
 
 loginSubmitButton.addEventListener('click', loginUser);
 guestDatesButton.addEventListener('click', findGuestBooking);
 
 function loginUser(e) {
+  const userName = document.querySelector(".user-name")
   e.preventDefault()
   if (userName.value === 'manager') {
     manager = new Manager();
