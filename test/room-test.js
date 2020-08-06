@@ -26,14 +26,14 @@ describe('Room', function() {
     expect(room).to.be.an.instanceof(Room);
   });
 
-  // it('should have an id', function() {
-  //   expect(booking.id).to.equal(4);
-  // });
-  //
-  // it('should have a user id', function() {
-  //   expect(booking.userID).to.equal(1);
-  // });
-  //
+  it('should have a number', function() {
+    expect(room.number).to.equal(8);
+  });
+
+  it('should have a roomType', function() {
+    expect(room.roomType).to.equal("junior suite");
+  });
+
   // it('should have a date', function() {
   //   expect(booking.date).to.equal("31/08/2019");
   // });
