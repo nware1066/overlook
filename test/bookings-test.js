@@ -27,4 +27,8 @@ describe('Booking', function() {
   it('should have an id', function() {
     expect(booking.id).to.equal(4);
   });
+
+  it('should have a user id', function() {
+    expect(booking.userID).to.equal(1);
+  });
 });
