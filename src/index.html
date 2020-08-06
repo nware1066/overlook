@@ -12,7 +12,7 @@
       <section class="log-in">
         <form class="login-form">
           <label for="userName">Username</label>
-          <input class="user-name" aria-label="username input" type="text" placeholder="User name" required />
+          <input class="user-name" aria-label="username input" type="text" placeholder="User name" value="customer1" required />
           <label for="password">Password</label>
           <input class="password" aria-label="password input" type="password" placeholder="Password" value="overlook2020" required />
           <button class="login-submit-button" aria-label="login submit button">Submit</button>
@@ -43,27 +43,29 @@
       </section>
     </section>
     <section class="guest-dashboard hidden">
-      <h1 class="guest-greeting-banner">Welcome to Overlook</h1>
-      <section class="guest-dates-container">
-        <label class="dates select" for="arrival-date-input"><label>
-        <input type="date" aria-label="date" class="booking-input" id="guest-date-input" placeholder="mm/dd/yyyy" />
-        <button type="button" class="guest-dates-button" aria-label='Search Availability'>Search availability</button>
-        <select class="room-select" aria-label="select room type" type="text" id="room-filter">
-          <option value="all rooms">All Room Types</option>
-          <option value="residential suite">Residential Suite</option>
-          <option value="suite">Suite</option>
-          <option value="single room">Single Room</option>
-          <option value="junior suite">Junior Suite</option>
-        </select>
-      </section>
-      <section class="guest-basic-info">
-        <section class="guest-current-booking-info">
-          <p>Your bookings with the OverLook Hotel</p>
-        </section>
-        <section class="guest-available-rooms">
+      <header class="guest-header">
+        <h1 class="guest-greeting-banner">Welcome to Overlook</h1>
+        <section class="guest-dates-container">
+          <label class="dates select" for="arrival-date-input"><label>
+          <input type="date" aria-label="date" class="booking-input" id="guest-date-input" placeholder="mm/dd/yyyy" />
+          <button type="button" class="guest-dates-button" aria-label='Search Availability'>Search availability</button>
+          <select class="room-select" aria-label="select room type" type="text" id="room-filter">
+            <option value="all rooms">All Room Types</option>
+            <option value="residential suite">Residential Suite</option>
+            <option value="suite">Suite</option>
+            <option value="single room">Single Room</option>
+            <option value="junior suite">Junior Suite</option>
+          </select>
         </section>
         <section class="guest-spending-info">
           <p>Your total expenses for your visits with us</p>
+        </section>
+      </header>
+      <section class="guest-basic-info">
+        <section class="guest-available-rooms hidden">
+        </section>
+        <p>Your bookings with the OverLook Hotel</p>
+        <section class="guest-current-booking-info">
         </section>
       </section>
     </section>

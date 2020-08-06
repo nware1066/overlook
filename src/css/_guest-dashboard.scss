@@ -1,5 +1,6 @@
 .guest-dashboard {
   display: flex;
+  flex-direction: column;
   justify-content: $default-justification;
 }
 
@@ -9,20 +10,25 @@
 }
 
 .guest-basic-info {
-  display: flex;
-  justify-content: $default-justification;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: $default-justification;
 }
 
 .guest-current-booking-info {
+  border: solid 1px black;
+  margin: 1em;
+  padding: 1em;
   display: grid;
-    margin-top: 12px;
-    grid-gap: 35px;
-    width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: 35px;
+  // width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
 .guest-available-rooms {
-
+  @extend .guest-current-booking-info;
+  height: 20vh;
+  overflow: scroll;
 }
 
 .guest-spending-info {

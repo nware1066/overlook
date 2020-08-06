@@ -1,12 +1,16 @@
 
 @import "variables";
+@import "guest-header";
 @import "guest-dashboard";
 
 $primary-background: linear-gradient(to right, rgba(210,255,82,1) 0%, rgba(95,220,76,1) 39%, rgba(143,232,66,1) 98%, rgba(145,232,66,1) 100%);
-;
 
+html,
 body {
   background: $primary-background;
+  // position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 

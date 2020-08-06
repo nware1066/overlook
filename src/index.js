@@ -53,27 +53,8 @@ function findGuestBooking() {
   let dateInput = guestDateInput.value;
   let date = dateInput.split('-').join('/');
   let availableRooms = hotel.findAvailableRooms(date);
-  renderCustomerAvailableDate(availableRooms)
+  domUpdates.renderCustomerAvailableDate(availableRooms, bookRoom)
 }
-
-function renderCustomerAvailableDate(availableRooms) {
-  let guestAvailableRooms = document.querySelector('.guest-available-rooms');
-  guestAvailableRooms.innerHTML = '';
-  availableRooms.map(room => {
-    guestAvailableRooms.innerHTML += `<section>
-    <p>Room:${room.roomType}</p>
-    <p>BedSize:${room.bedSize}</p>
-    <p>Number of Beds${room.numBeds}</p>
-    <p>Room Number${room.number}</p>
-    <button class="guest-booking-button" value=${room.number} type=button>Book room</button>
-    </section>`
-  })
-  let guestBookingButtons = document.querySelectorAll('.guest-booking-button');
-  guestBookingButtons.forEach(button => {
-    button.addEventListener('click', bookRoom);
-  })
-}
-
 
 function bookRoom(event) {
   event.preventDefault();
@@ -86,19 +67,19 @@ function bookRoom(event) {
   }
 }
 
-  function postGuestBooking(postDate, selectedRoomNumber, currentGuestID) {
-    fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/bookings/bookings', {
-     method: 'POST',
-     headers: {
-       'Content-Type': 'application/json'
-     },
-     body: JSON.stringify({
-       userID: Number(currentGuestID),
-       date: postDate,
-       roomNumber: Number(selectedRoomNumber)
-     })
+function postGuestBooking(postDate, selectedRoomNumber, currentGuestID) {
+  fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/bookings/bookings', {
+   method: 'POST',
+   headers: {
+     'Content-Type': 'application/json'
+   },
+   body: JSON.stringify({
+     userID: Number(currentGuestID),
+     date: postDate,
+     roomNumber: Number(selectedRoomNumber)
    })
-   .then(response => response.json())
-   .then(data => console.log('guestpost data', data))
-   .catch(error => console.error('guestPost error', error))
-  }
+ })
+ .then(response => response.json())
+ .then(data => console.log('guestpost data', data))
+ .catch(error => console.error('guestPost error', error))
+}

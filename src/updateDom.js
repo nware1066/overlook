@@ -2,9 +2,6 @@
 let login = document.querySelector(".login-page");
 let managerDashboard = document.querySelector(".manager-dashboard");
 let guestDashboard = document.querySelector(".guest-dashboard");
-let guestDatesButton = document.querySelector(".guest-dates-button");
-
-// guestDatesButton.addEventListener('click', findGuestBooking);
 
 const domUpdates = {
 
@@ -51,8 +48,28 @@ const domUpdates = {
     })
   },
 
+  displayAvailableRooms: function(availableRooms) {
+    let guestAvailableRooms = document.querySelector('.guest-available-rooms');
+    guestAvailableRooms.innerHTML = '';
+    availableRooms.map(room => {
+      guestAvailableRooms.innerHTML += `<section>
+      <p>Room:${room.roomType}</p>
+      <p>BedSize:${room.bedSize}</p>
+      <p>Number of Beds${room.numBeds}</p>
+      <p>Room Number${room.number}</p>
+      <button class="guest-booking-button" value=${room.number} type=button>Book room</button>
+      </section>`
+    });
+    guestAvailableRooms.classList.remove('hidden');
+  },
 
-  
+  renderCustomerAvailableDate: function(availableRooms, bookRoom) {
+    this.displayAvailableRooms(availableRooms);
+    let guestBookingButtons = document.querySelectorAll('.guest-booking-button');
+    guestBookingButtons.forEach(button => {
+      button.addEventListener('click', bookRoom);
+    })
+  },
 
   displayAllSpending: function(currentUser) {
     let guestSpendingInfoHTML = document.querySelector('.guest-spending-info');
