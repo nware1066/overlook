@@ -31,4 +31,8 @@ describe('Booking', function() {
   it('should have a user id', function() {
     expect(booking.userID).to.equal(1);
   });
+
+  it('should have a date', function() {
+    expect(booking.date).to.equal("31/08/2019");
+  });
 });
