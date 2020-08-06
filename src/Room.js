@@ -4,15 +4,13 @@ import Manager from './Manager';
 
 class Room {
   constructor(hotelData) {
-    this.number = hotelData.rooms.number;
-    this.roomType = hotelData.rooms.roomType;
-    this.bidet = hotelData.rooms.bidet;
-    this.bedSize = hotelData.rooms.bedSize;
-    this.numBeds = hotelData.rooms.numBeds;
-    this.costPerNight = hotelData.rooms.costPerNight;
-    console.log('room', hotelData.rooms.number);
+    this.number = hotelData.number;
+    this.roomType = hotelData.roomType;
+    this.bidet = hotelData.bidet;
+    this.bedSize = hotelData.bedSize;
+    this.numBeds = hotelData.numBeds;
+    this.costPerNight = hotelData.costPerNight;
   }
-
 }
 
 export default Room;

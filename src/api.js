@@ -5,7 +5,6 @@ function fetchUsers() {
     return fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/users/users')
       .then(response => response.json())
       .then(data => data.users)
-        // .map(user => new Guest(user)))
       .catch(error => console.log("fetch user error"));
   }
 
@@ -13,7 +12,6 @@ function fetchUsers() {
     return fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/rooms/rooms')
       .then(response => response.json())
       .then(data => data.rooms)
-      // .map(room => new Room(room))
       .catch(error => console.log("fetch rooms error"))
   }
 
@@ -21,7 +19,6 @@ function fetchUsers() {
     return fetch('https://fe-apps.herokuapp.com/api/v1/overlook/1904/bookings/bookings')
     .then(response => response.json())
     .then(data => data.bookings)
-    // .map(booking => new Booking(booking))
     .catch(error => console.log("fetch bookings error"))
   }
 
@@ -32,10 +29,11 @@ function fetchUsers() {
       allData.users = response[0]
       allData.rooms = response[1];
       allData.bookings = response[2];
-      // console.log(allData)
       return allData;
     })
     .catch(error => console.log("allData error"))
   }
+
+// refactor to instantiate classes on fetch (could not make it work within time)
 
 export default getAllFetchedData;

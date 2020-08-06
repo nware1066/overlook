@@ -10,7 +10,6 @@ const domUpdates = {
     managerDashboard.classList.remove('hidden');
   },
 
-
   updateTotalAvailableRooms: function(hotel, date) {
     const availableRoomsHTML = document.querySelector(".available-rooms");
     const total = hotel.totalAvailableRooms(date);
@@ -42,33 +41,49 @@ const domUpdates = {
   },
 
   displayGuestBookings: function(hotel, date, currentUser) {
-    let guestBookingHTML = document.querySelector('.guest-booking-info');
-    let bookingList = currentUser.getAllBookings()
-    guestBookingHTML.innerHTML = `Your bookings with Overlook Hotel: ${this.renderBookingDates(bookingList)}`;
-  },
-
-  renderBookingDates: function (bookingList) {
-    return bookingList.map(booking => {
-      return `<p>${booking.date}</p>`
+    let guestBookingHTML = document.querySelector('.guest-current-booking-info');
+    let bookingList = currentUser.getAllBookings();
+    bookingList.map(booking => {
+      guestBookingHTML.innerHTML += `<section>${booking.date}</section>`;
     })
   },
 
-  displayAllSpending: function (currentUser) {
+  displayAvailableRooms: function(availableRooms) {
+    let guestAvailableRooms = document.querySelector('.guest-available-rooms');
+    guestAvailableRooms.innerHTML = '';
+    availableRooms.map(room => {
+      guestAvailableRooms.innerHTML += `<section>
+      <p>Room:${room.roomType}</p>
+      <p>BedSize:${room.bedSize}</p>
+      <p>Number of Beds${room.numBeds}</p>
+      <p>Room Number${room.number}</p>
+      <button class="guest-booking-button" value=${room.number} type=button>Book room</button>
+      </section>`
+    });
+    guestAvailableRooms.classList.remove('hidden');
+  },
+
+  renderCustomerAvailableDate: function(availableRooms, bookRoom) {
+    this.displayAvailableRooms(availableRooms);
+    let guestBookingButtons = document.querySelectorAll('.guest-booking-button');
+    guestBookingButtons.forEach(button => {
+      button.addEventListener('click', bookRoom);
+    })
+  },
+
+  displayAllSpending: function(currentUser) {
     let guestSpendingInfoHTML = document.querySelector('.guest-spending-info');
     let totalSpending = currentUser.getAllSpending()
     guestSpendingInfoHTML.innerHTML = `All the lovely time with us has only cost you: $${Math.round(totalSpending)}`;
   },
 
    guestDashboardHandler: function(hotel, date, currentUser) {
-     console.log(currentUser)
     this.displayGuestDashboard(login, guestDashboard, currentUser);
     this.displayGuestBookings(hotel, date, currentUser);
     this.displayAllSpending(currentUser);
   }
-  // method to display rooms booked for the date from function on Manager.js (don't forget arguments and querySelectors)
 }
 
-// update DoM using data collected/manipulated in Classes
 
 
 export default domUpdates;
