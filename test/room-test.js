@@ -38,10 +38,10 @@ describe('Room', function() {
     expect(room.bidet).to.equal(true);
   });
 
-  // it('should have a room number', function() {
-  //   expect(booking.roomNumber).to.equal(8);
-  // });
-  //
+  it('should have a bed size', function() {
+    expect(room.bedSize).to.equal("king");
+  });
+
   // it('should no room service charges by default', function() {
   //   expect(booking.roomServiceCharges).to.deep.equal([]);
   // });
